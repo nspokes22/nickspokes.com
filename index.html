@@ -148,7 +148,8 @@ button {
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="/images/website.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/nickspokes.com')" class="w3-hover-opacity" alt="nickspokes.com">
+      nickspokes.com
     </div>
 
     <div class="w3-col m3">
@@ -173,7 +174,7 @@ button {
     <div class="w3-col m3">
       <!--img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing"-->
     </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    <!--button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button-->
   </div>
 </div>
 
@@ -203,15 +204,6 @@ button {
       <button id="view-git" class="project-btn">View On GitHub</button>
       <button id="view-demo" class="project-btn">Watch Demonstration</button>
     </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
 
@@ -329,7 +321,10 @@ function onClick2(element, link) {
       description.innerHTML = "This is a calculator that can calculate well-defined or abstract units, as well as singlular or compound units. This was created in a SCRUM team for my Software Engineering class (CS345) at James Madison University (JMU) in the Spring semester of 2022. This was a team project, therefore, I am primarily responsible for the GUI, although I was involved in many pieces of back-end functionality such as exponent representations and recursively interpreting inputted compound units.";
       break;
     case "IntroSort Algorithm":
-      description.innerHTML = "This is my own implementation of the Introspective Sort algorithm. This was created for my Data Structures and Algorithms class (CS240) at James Madison University (JMU) in the Spring semester of 2022. This modified version of Introspective Sort has a time complexity of nlog(n) and is made up of Insertion Sort, multiple modified versions of Merge Sort, and Quick Sort. ";
+      description.innerHTML = "This is my own implementation of the Introspective Sort algorithm. This was created for my Data Structures and Algorithms class (CS240) at James Madison University (JMU) in the Spring semester of 2022. This modified version of Introspective Sort has a time complexity of nlog(n) and is made up of Insertion Sort, Quick Sort, and multiple modified versions of Merge Sort. ";
+      break;
+    case "nickspokes.com":
+      description.innerHTML = "This is my first website created as a personal project to showcase my projects and personality. I knew nothing about web development before embarking on this project, and have learned a lot through it. I'm always expanding on this project, so it will definitely expand beyond its current state. Initially, I used Amazon Web Services (AWS) to host this website, however, I've migrated to hosting it on my personal server at my house so I can get a firm understanding of web hosting."
       break;
     default:
       break;
