@@ -333,6 +333,18 @@ function onClick2(element, link) {
   }
 }
 
+demoBtn.onclick = function() {
+  var link;
+  switch(curr_element.alt) {
+    case "Y86 Interpreter":
+      link = "https://www.youtube.com/watch?v=vo1sUbJBpbQ";
+      break;
+    default:
+      break;
+  }
+  window.open(link);
+}
+
 gitBtn.onclick = function() {
   window.open(curr_link);
 }
