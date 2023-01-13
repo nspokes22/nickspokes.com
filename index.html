@@ -135,7 +135,7 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="/images/y86.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/y86')" class="w3-hover-opacity" alt="Y86 Interpreter">
+      <img src="/images/y86.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/y86', 'https://www.youtube.com/watch?v=vo1sUbJBpbQ')" class="w3-hover-opacity" alt="Y86 Interpreter">
       Y86 Interpreter
     </div>
 
@@ -295,6 +295,7 @@ function tyMessage() {
 
 var curr_element;
 var curr_link;
+var curr_demo;
 var gitBtn = document.getElementById("view-git");
 var pImgBtn = document.getElementById("view-img");
 var demoBtn = document.getElementById("view-demo");
@@ -304,13 +305,14 @@ var pModal = document.getElementById("project-modal");
 var pSpan = document.getElementsByClassName("pClose")[0];
 
 // When the user clicks on an image, display the project options
-function onClick2(element, link) {
+function onClick2(element, link, demo) {
   var description = document.getElementById("project-description");
   document.getElementById("project-header").innerHTML = element.alt;
   document.getElementById("project-img").src = element.src;
   pModal.style.display = "block";
   curr_element = element;
   curr_link = link;
+  curr_demo = demo;
   demoBtn.disabled = false;
   demoBtn.title = "";
   switch(element.alt) {
@@ -334,15 +336,7 @@ function onClick2(element, link) {
 }
 
 demoBtn.onclick = function() {
-  var link;
-  switch(curr_element.alt) {
-    case "Y86 Interpreter":
-      link = "https://www.youtube.com/watch?v=vo1sUbJBpbQ";
-      break;
-    default:
-      break;
-  }
-  window.open(link);
+  window.open(curr_demo);
 }
 
 gitBtn.onclick = function() {
