@@ -19,7 +19,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,12 +44,25 @@ body, html {
   min-height: 400px;
 }
 
+/* Resume image */
+.bgimg-4 {
+  background-image: url("/images/project.jpg");
+  background-position: 100% calc(100% + 520px);
+  min-height: 400px;
+}
+
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
+.resume {
+  display: block;
+  min-height: 100%;
+  min-width: 70%;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
     background-attachment: scroll;
     min-height: 400px;
   }
@@ -103,17 +116,24 @@ body, html {
     <div class="w3-col m6 w3-hide-small w3-padding-large">
       <p>Outside of my passion for technology, I am always outdoors; you're likely to find me hiking, fishing, caving, or camping on any given weekend. This passion stemmed from my experience in the Boy Scouts where I earned the rank of Eagle Scout, the highest rank possible. My experiences earning this rank shaped me into the natural team player I am today.</p>
       <div class="w3-padding-16">
-        <p>View my resume <a href='documents/Resume.pdf' target='_blank' rel='noopener noreferrer'>HERE<a>!</p>
-      </div>
-      <p>Check out my Facebook, Instagram, and LinkedIn below:</p>
-      <div class="w3-xlarge w3-section">
-        <i class="fa fa-facebook-official w3-hover-opacity" onclick="window.open('https://www.facebook.com/nick.spokes.393/')"></i>
-        <i class="fa fa-instagram w3-hover-opacity" onclick="window.open('https://www.instagram.com/nick.spokes22/')"></i>
-        <i class="fa fa-linkedin w3-hover-opacity" onclick="window.open('https://www.linkedin.com/in/nick-spokes-173b29256/')"></i>
+        <p>Check out my Facebook, Instagram, and LinkedIn below:</p>
+        <div class="w3-xlarge w3-section">
+          <i class="fa fa-facebook-official w3-hover-opacity" onclick="window.open('https://www.facebook.com/nick.spokes.393/')"></i>
+          <i class="fa fa-instagram w3-hover-opacity" onclick="window.open('https://www.instagram.com/nick.spokes22/')"></i>
+          <i class="fa fa-linkedin w3-hover-opacity" onclick="window.open('https://www.linkedin.com/in/nick-spokes-173b29256/')"></i>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-center w3-padding-large w3-dark-grey w3-xlarge w3-wide w3-animate-opacity">RESUME</span>
+  </div>
+</div>
+
+<p align="center"><iframe class="resume w3-center" src="documents/Resume.pdf" width="85%" height="700"></iframe></p>
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
@@ -203,7 +223,7 @@ body, html {
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-     <span class="w3-center w3-padding-large w3-dark-grey w3-xlarge w3-wide w3-animate-opacity">CONTACT</span>
+    <span class="w3-center w3-padding-large w3-dark-grey w3-xlarge w3-wide w3-animate-opacity">CONTACT</span>
   </div>
 </div>
 
