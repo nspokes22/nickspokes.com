@@ -47,7 +47,7 @@ body, html {
 /* Resume image */
 .bgimg-4 {
   background-image: url("/images/project.jpg");
-  background-position: 100% calc(100% + 520px);
+  background-position: 100% calc(100% + 400px);
   min-height: 400px;
 }
 
@@ -61,10 +61,26 @@ body, html {
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
+@media (pointer:none), (pointer:coarse) {
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
     background-attachment: scroll;
     min-height: 400px;
+  }
+
+  @media only screen and (orientation: portrait) {
+    .bgimg-4 {
+      background-attachment: scroll;
+      background-position: 100% calc(100% + 50px);
+      min-height: 400px;
+    }
+  }
+
+  @media only screen and (orientation: landscape) {
+    .bgimg-4 {
+      background-attachment: scroll;
+      background-position: 100% calc(100% + 230px);
+      min-height: 400px;
+    }
   }
 }
 </style>
