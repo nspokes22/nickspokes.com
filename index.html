@@ -93,30 +93,25 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT ME</h3>
   <p class="w3-center"><em></em></p>
-  <p>Welcome to my website! I am a student and aspiring software engineer from Purcellville, Virginia, who's passionate about all things technology. My first foray into the computer world was in middle school when I built my first computer with the help of my friend, and I loved the process so much that I decided I would pursue a computer related career. Over the years, I've followed my passion experimenting with different technologies and have made numerous personal projects, and ultimately, I found that I enjoyed software development the most. After graduating from high school, I attended James Madison University where I continue to study computer science with the hopes of soon starting my career as a software developer.</p>
+  <p>Welcome to my website! I am a student and aspiring software engineer from Purcellville, Virginia, who's passionate about all things technology. My first foray into the computer world was in middle school when I built my first computer with the help of my friend, and I loved the process so much that I decided I would pursue a computer related career. Over the years, I've followed my passion experimenting with different technologies and have made numerous personal projects, and ultimately, I found that I enjoyed software development the most. After graduating from high school, I attended James Madison University where I continue to study computer science with the hopes of soon starting my career as a software engineer.</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Nick</b></p><br>
       <img src="/images/Me.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Outside of my passion for technology, I am chronically outdoors; you're likely to find me hiking, fishing, caving, or camping on any given weekend. This passion stemmed from my experience in the Boy Scouts where I earned the rank of Eagle Scout, the highest rank possible. My experiences earning this rank shaped me into the natural team player I am today.</p>
+      <p>Outside of my passion for technology, I am always outdoors; you're likely to find me hiking, fishing, caving, or camping on any given weekend. This passion stemmed from my experience in the Boy Scouts where I earned the rank of Eagle Scout, the highest rank possible. My experiences earning this rank shaped me into the natural team player I am today.</p>
+      <div class="w3-padding-16">
+        <p>View my resume <a href='documents/Resume.pdf' target='_blank' rel='noopener noreferrer'>HERE<a>!</p>
+      </div>
+      <p>Check out my Facebook, Instagram, and LinkedIn below:</p>
+      <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity" onclick="window.open('https://www.facebook.com/nick.spokes.393/')"></i>
+        <i class="fa fa-instagram w3-hover-opacity" onclick="window.open('https://www.instagram.com/nick.spokes22/')"></i>
+        <i class="fa fa-linkedin w3-hover-opacity" onclick="window.open('https://www.linkedin.com/in/nick-spokes-173b29256/')"></i>
+      </div>
     </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-code"></i>Coding</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Development</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-gears"></i>Network/System Administration</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
   </div>
 </div>
 
@@ -157,7 +152,8 @@ body, html {
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <!--img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist"-->
+      <img src="/images/Waterford_Project.jpg" style="width:100%" onclick="onClick2(this, 'https://waterfordfdn.maps.arcgis.com/apps/MapSeries/index.html?appid=eff8a140b56f4b9c88afbcd8af909212')" class="w3-hover-opacity" alt="Dashboard Map of Western Loudoun Development">
+      Dashboard Map of Western Loudoun Development
     </div>
 
     <div class="w3-col m3">
@@ -315,20 +311,26 @@ function onClick2(element, link, demo) {
   curr_demo = demo;
   demoBtn.disabled = false;
   demoBtn.title = "";
+  gitBtn.innerHTML = "View on GitHub";
   switch(element.alt) {
     case "Y86 Interpreter":
       description.innerHTML = "This is an interpreter that uses the Von Neumann Cycle to interpret and execute Y86 instructions. This project was created for my Computer Systems class (CS261) at James Madison University (JMU) in the Fall semester of 2022. It is split into four parts, each was a separate project for a separate grade, yet they build off of one another to create the final product.";
       break;
     case "UnitED Calculator":
-      description.innerHTML = "This is a calculator that can calculate well-defined or abstract units, as well as singlular or compound units. This was created in a SCRUM team for my Software Engineering class (CS345) at James Madison University (JMU) in the Spring semester of 2022. This was a team project, therefore, I am primarily responsible for the GUI, although I was involved in many pieces of back-end functionality such as exponent representations and recursively interpreting inputted compound units.";
+      description.innerHTML = "This is a calculator that can calculate well-defined or abstract units, as well as singular or compound units. This was created in a SCRUM team for my Software Engineering class (CS345) at James Madison University (JMU) in the Spring semester of 2022. This was a team project, therefore, I am primarily responsible for the GUI, although I was involved in many pieces of back-end functionality such as exponent representations and recursively interpreting inputted compound units.";
       break;
     case "IntroSort Algorithm":
       description.innerHTML = "This is my own implementation of the Introspective Sort algorithm. This was created for my Data Structures and Algorithms class (CS240) at James Madison University (JMU) in the Spring semester of 2022. This modified version of Introspective Sort has a time complexity of nlog(n) and is made up of Insertion Sort, Quick Sort, and multiple modified versions of Merge Sort. ";
       break;
     case "nickspokes.com":
-      description.innerHTML = "This is my first website created as a personal project to showcase my projects and personality. I knew nothing about web development before embarking on this project, and have learned a lot through it. I'm always expanding on this project, so it will definitely expand beyond its current state. Initially, I used Amazon Web Services (AWS) to host this website, however, I've migrated to hosting it on my personal server at my house so I can get a firm understanding of web hosting."
+      description.innerHTML = "This is my first website created as a personal project to showcase my projects and personality. I knew nothing about web development before embarking on this project, and have learned a lot through it. I'm always expanding on this project, so it will definitely expand beyond its current state. Initially, I used Amazon Web Services (AWS) to host this website, however, I've migrated to hosting it on my personal server at my house so I can get a firm understanding of web hosting.";
       demoBtn.disabled = true;
       demoBtn.title = "You're already here!"
+      break;
+    case "Dashboard Map of Western Loudoun Development":
+      description.innerHTML = "This is a Dashboard Map showing the development over time in Loudoun's historic localities. This project was created both as a high school project and to benefit the Waterford Foundation, a local historical preservation society. The first page shows the percent of each of Loudoun's historic towns that have been developed since 1950. The second map shows the same info, but adds the specific parcels that have been developed. The third map shows the development over time around Waterford, highlighting how well preserved it is. This is still on the Waterford Foundation's website today and can be accessed by clicking <a href='https://www.waterfordfoundation.org/dashboard-map-of-western-loudoun-development-1950-2020/' target='_blank' rel='noopener noreferrer'>HERE<a>!";
+      demoBtn.disabled = true;
+      gitBtn.innerHTML = "View Map";
       break;
     default:
       break;
