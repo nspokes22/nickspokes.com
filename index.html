@@ -171,29 +171,29 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="/images/y86.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/y86', 'https://www.youtube.com/watch?v=vo1sUbJBpbQ')" class="w3-hover-opacity" alt="Y86 Interpreter">
+      <img src="/images/y86.jpg" style="width:100%" onclick="onClick(this, 'https://github.com/nspokes22/y86', 'https://www.youtube.com/watch?v=vo1sUbJBpbQ')" class="w3-hover-opacity" alt="Y86 Interpreter">
       Y86 Interpreter
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/calc2.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/UnitED', 'https://www.youtube.com/watch?v=I5ivTgipNes')" class="w3-hover-opacity" alt="UnitED Calculator">
+      <img src="/images/calc2.jpg" style="width:100%" onclick="onClick(this, 'https://github.com/nspokes22/UnitED', 'https://www.youtube.com/watch?v=I5ivTgipNes')" class="w3-hover-opacity" alt="UnitED Calculator">
       Unit Calculator
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/website.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/nickspokes.com')" class="w3-hover-opacity" alt="nickspokes.com">
+      <img src="/images/website.jpg" style="width:100%" onclick="onClick(this, 'https://github.com/nspokes22/nickspokes.com')" class="w3-hover-opacity" alt="nickspokes.com">
       nickspokes.com
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/sorting_comparison.jpg" style="width:100%" onclick="onClick2(this, 'https://github.com/nspokes22/quicksort', 'https://www.youtube.com/watch?v=tQnjUaRX0KA')" class="w3-hover-opacity" alt="IntroSort Algorithm">
+      <img src="/images/sorting_comparison.jpg" style="width:100%" onclick="onClick(this, 'https://github.com/nspokes22/quicksort', 'https://www.youtube.com/watch?v=tQnjUaRX0KA')" class="w3-hover-opacity" alt="IntroSort Algorithm">
       IntroSort Algorithm
     </div>
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="/images/Waterford_Project.jpg" style="width:100%" onclick="onClick2(this, 'https://waterfordfdn.maps.arcgis.com/apps/MapSeries/index.html?appid=eff8a140b56f4b9c88afbcd8af909212')" class="w3-hover-opacity" alt="Dashboard Map of Western Loudoun Development">
+      <img src="/images/Waterford_Project.jpg" style="width:100%" onclick="onClick(this, 'https://waterfordfdn.maps.arcgis.com/apps/MapSeries/index.html?appid=eff8a140b56f4b9c88afbcd8af909212')" class="w3-hover-opacity" alt="Dashboard Map of Western Loudoun Development">
       Dashboard Map of Western Loudoun Development
     </div>
 
@@ -223,7 +223,7 @@ body, html {
       <h2 id="project-header" class="project-header"></h2>
     </div>
     <div class="project-modal-body">
-      <div class="project-container">
+      <div id="project-container" class="project-container">
         <div class="project-container-child">
           <p id="project-description"></p>
         </div>
@@ -235,8 +235,9 @@ body, html {
     </div>
     <div class="project-modal-footer">
       <button id="view-img" class="project-btn">Open Image</button>
-      <button id="view-git" class="project-btn">View On GitHub</button>
+      <button id="view-git" class="project-btn" title="">View On GitHub</button>
       <button id="view-demo" class="project-btn" title="">Watch Demonstration</button>
+      <button id="simulate" class="project-btn" title="Coming soon!" disabled="true">Simulate</button>
     </div>
   </div>
 </div>
@@ -278,25 +279,6 @@ body, html {
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </form>
-
-      <!-- The Modal -->
-      <!--
-      <div id="tyModal" class="ty-modal">
-        <div class="ty-modal-content">
-          <div class="ty-modal-header">
-            <span class="tyClose">&times;</span>
-            <h2>Modal Header</h2>
-          </div>
-          <div class="ty-modal-body">
-            <p id="ty-msg"></p>
-          </div>
-          <div class="ty-modal-footer">
-            <h3>Modal Footer</h3>
-          </div>
-        </div>
-      </div>
-      -->
-
     </div>
   </div>
 </div>
@@ -312,24 +294,6 @@ body, html {
 </footer>
  
 <script>
-/*
-// Get the modal
-var tyModal = document.getElementById("tyModal");
-
-// Get the <span> element that closes the modal
-var tySpan = document.getElementsByClassName("tyClose")[0];
-
-// When the user clicks on <span> (x), close the modal
-tySpan.onclick = function() {
-  tyModal.style.display = "none";
-}
-
-function tyMessage() {
-  tyModal.style.display = "block";
-}
-*/
-
-
 var curr_element;
 var curr_link;
 var curr_demo;
@@ -338,11 +302,11 @@ var pImgBtn = document.getElementById("view-img");
 var demoBtn = document.getElementById("view-demo");
 var pModal = document.getElementById("project-modal");
 
-// Get the span element that acts as a close button
+// Span element that acts as a close button
 var pSpan = document.getElementsByClassName("pClose")[0];
 
 // When the user clicks on an image, display the project options
-function onClick2(element, link, demo) {
+function onClick(element, link, demo) {
   var description = document.getElementById("project-description");
   document.getElementById("project-header").innerHTML = element.alt;
   document.getElementById("project-img").src = element.src;
@@ -350,18 +314,26 @@ function onClick2(element, link, demo) {
   curr_element = element;
   curr_link = link;
   curr_demo = demo;
+
   demoBtn.disabled = false;
   demoBtn.title = "";
+  gitBtn.disabled = false;
+  gitBtn.title = "";
   gitBtn.innerHTML = "View on GitHub";
+
   switch(element.alt) {
     case "Y86 Interpreter":
       description.innerHTML = "This is an interpreter that uses the Von Neumann Cycle to interpret and execute Y86 instructions. This project was created for my Computer Systems class (CS261) at James Madison University (JMU) in the Fall semester of 2022. It is split into four parts, each was a separate project for a separate grade, yet they build off of one another to create the final product.";
+      gitBtn.disabled = true;
+      gitBtn.title = "Disabled for JMU honor code, contact me to view";
       break;
     case "UnitED Calculator":
       description.innerHTML = "This is a calculator that can calculate well-defined or abstract units, as well as singular or compound units. This was created in a SCRUM team for my Software Engineering class (CS345) at James Madison University (JMU) in the Spring semester of 2022. This was a team project, therefore, I am primarily responsible for the GUI, although I was involved in many pieces of back-end functionality such as exponent representations and recursively interpreting inputted compound units.";
       break;
     case "IntroSort Algorithm":
       description.innerHTML = "This is my own implementation of the Introspective Sort algorithm. This was created for my Data Structures and Algorithms class (CS240) at James Madison University (JMU) in the Spring semester of 2022. This modified version of Introspective Sort has a time complexity of nlog(n) and is made up of Insertion Sort, Quick Sort, and multiple modified versions of Merge Sort. ";
+      gitBtn.disabled = true;
+      gitBtn.title = "Disabled for JMU honor code, contact me to view";
       break;
     case "nickspokes.com":
       description.innerHTML = "This is my first website created as a personal project to showcase my projects and personality. I knew nothing about web development before embarking on this project, and have learned a lot through it. I'm always expanding on this project, so it will definitely expand beyond its current state. Initially, I used Amazon Web Services (AWS) to host this website, however, I've migrated to hosting it on my personal server at my house so I can get a firm understanding of web hosting.";
@@ -371,6 +343,7 @@ function onClick2(element, link, demo) {
     case "Dashboard Map of Western Loudoun Development":
       description.innerHTML = "This is a Dashboard Map showing the development over time in Loudoun's historic localities. This project was created both as a high school project and to benefit the Waterford Foundation, a local historical preservation society. The first page shows the percent of each of Loudoun's historic towns that have been developed since 1950. The second map shows the same info, but adds the specific parcels that have been developed. The third map shows the development over time around Waterford, highlighting how well preserved it is. This is still on the Waterford Foundation's website today and can be accessed by clicking <a href='https://www.waterfordfoundation.org/dashboard-map-of-western-loudoun-development-1950-2020/' target='_blank' rel='noopener noreferrer'>HERE<a>!";
       demoBtn.disabled = true;
+      demoBtn.title = "View map for explanation";
       gitBtn.innerHTML = "View Map";
       break;
     default:
@@ -378,14 +351,29 @@ function onClick2(element, link, demo) {
   }
 }
 
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+
+
+// Demonstration button
 demoBtn.onclick = function() {
   window.open(curr_demo);
 }
 
+// Github button
 gitBtn.onclick = function() {
   window.open(curr_link);
 }
 
+// View Image button
 pImgBtn.onclick = function() {
   window.open(curr_element.src);
 }
@@ -405,25 +393,14 @@ window.onclick = function(event) {
 }
 
 // Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+window.onscroll = function() {
+  var navbar = document.getElementById("myNavbar");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+  } else {
+      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+  }
+};
 </script>
 
 </body>
